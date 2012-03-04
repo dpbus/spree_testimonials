@@ -1,0 +1,15 @@
+<h1 id="testimonials"><%= t('testimonials.testimonials') %></h1>
+
+<ul id="testimonials-list">
+  <% @testimonials.each do |t| %>
+  <li >
+    <blockquote>
+      <%= t.quote %>
+    </blockquote>
+  
+    <p class="author">
+      <%= t.author_name + (" | #{t.location}" unless t.location.empty?) %> 
+    </p>
+  </li>
+  <% end %>
+</ul>
