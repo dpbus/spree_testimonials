@@ -1,0 +1,8 @@
+<div id="new-testimonial"><%= link_to "+ New Testimonial", new_admin_testimonial_path %></div>
+<% @testimonials.each do |t| %>
+  <div id="testimonial">
+    <%= "\"#{t.quote} - #{t.author_name} | #{t.location}\"" %> |
+    <%= link_to "Delete", {:action => :destroy, :id => t.id}, :method => :delete %>
+  </div>
+  <br />
+<% end %>
